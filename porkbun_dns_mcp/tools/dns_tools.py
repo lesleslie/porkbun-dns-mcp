@@ -51,10 +51,10 @@ class CreateDNSRecordInput(BaseModel):
     record_type: str = Field(
         description="DNS record type: A, AAAA, CNAME, MX, TXT, NS, SRV, CAA, or ALIAS"
     )
-    name: str = Field(
-        description="Record name (subdomain or empty for root domain)"
+    name: str = Field(description="Record name (subdomain or empty for root domain)")
+    content: str = Field(
+        description="Record content/value (IP address, hostname, etc.)"
     )
-    content: str = Field(description="Record content/value (IP address, hostname, etc.)")
     ttl: int = Field(
         default=600,
         description="Time to live in seconds (minimum: 60, default: 600)",
@@ -151,7 +151,7 @@ def _record_to_dict(record: DNSRecord) -> dict[str, Any]:
 # =============================================================================
 
 
-def register_dns_tools(app: "FastMCP", client: PorkbunClient) -> None:
+def register_dns_tools(app: FastMCP, client: PorkbunClient) -> None:
     """Register DNS management tools with the FastMCP app.
 
     Args:

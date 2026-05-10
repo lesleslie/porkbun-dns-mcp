@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import pytest
 
-
 # =============================================================================
 # TEMPLATE TEST CLASSES
 # Uncomment and adapt these when Pydantic models are added to the project

@@ -11,11 +11,11 @@ import warnings
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 warnings.filterwarnings("ignore", message=".*PyTorch.*TensorFlow.*Flax.*")
 
-import uvicorn
-from mcp_common import MCPServerCLIFactory, MCPServerSettings
-from mcp_common.cli.health import RuntimeHealthSnapshot
+import uvicorn  # noqa: E402
+from mcp_common import MCPServerCLIFactory, MCPServerSettings  # noqa: E402
+from mcp_common.cli.health import RuntimeHealthSnapshot  # noqa: E402
 
-from porkbun_dns_mcp import __version__
+from porkbun_dns_mcp import __version__  # noqa: E402
 
 
 class PorkbunDNSSettings(MCPServerSettings):

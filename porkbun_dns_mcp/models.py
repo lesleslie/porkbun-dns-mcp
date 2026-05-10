@@ -8,13 +8,13 @@ API Documentation: https://porkbun.com/api/json/v3/documentation
 
 from __future__ import annotations
 
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, Field, field_validator
 
 
-class DNSRecordType(str, Enum):
+class DNSRecordType(StrEnum):
     """Supported DNS record types.
 
     Porkbun supports the following record types:
@@ -94,7 +94,9 @@ class DNSRecordCreate(BaseModel):
         default="",
         description="Record name (subdomain or empty/@ for root domain)",
     )
-    content: str = Field(description="Record content/value (IP address, hostname, etc.)")
+    content: str = Field(
+        description="Record content/value (IP address, hostname, etc.)"
+    )
     ttl: int = Field(
         default=600,
         description="Time to live in seconds (minimum: 60)",

@@ -1,4 +1,10 @@
-# Porkbun DNS MCP Server
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+For a shorter, tool-neutral bootstrap document, start with `AGENTS.md`.
+
+## Project Overview
 
 This is an MCP (Model Context Protocol) server for managing Porkbun DNS records.
 
@@ -33,6 +39,7 @@ bandit -r porkbun_dns_mcp
 - Run `pyright` to verify types
 
 <!-- CRACKERJACK_START -->
+
 ## Crackerjack Integration
 
 This project is configured with crackerjack for automated quality checks and AI-powered code analysis.
@@ -76,6 +83,7 @@ This project has access to Crackerjack's AI agent skill system via MCP:
 - **Confidence-Based Execution**: Agents provide confidence scores for suggestions
 
 Example usage via MCP:
+
 ```python
 # List available skills
 await mcp.call_tool("list_skills", {"skill_type": "all"})
@@ -90,4 +98,5 @@ await mcp.call_tool("execute_skill", {
     "issue_data": {"message": "...", "file_path": "..."}
 })
 ```
+
 <!-- CRACKERJACK_END -->
