@@ -70,7 +70,7 @@ class DNSRecord(BaseModel):
     @classmethod
     def normalize_name(cls, v: str) -> str:
         """Normalize record name - empty string becomes @ for root domain."""
-        return v if v else "@"
+        return v or "@"
 
 
 class DNSRecordCreate(BaseModel):

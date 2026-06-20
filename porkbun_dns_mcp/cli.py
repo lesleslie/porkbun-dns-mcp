@@ -48,10 +48,15 @@ def health_probe_handler() -> RuntimeHealthSnapshot:
 
     settings = get_settings()
     return RuntimeHealthSnapshot(
-        server_name="porkbun-dns-mcp",
-        status="healthy",
-        version=__version__,
-        extra={
+        orchestrator_pid=os.getpid(),
+        watchers_running=False,
+        remote_enabled=False,
+        lifecycle_state={
+            "server_name": "porkbun-dns-mcp",
+            "status": "healthy",
+            "version": __version__,
+        },
+        activity_state={
             "credentials_configured": settings.has_credentials(),
             "api_url": settings.base_url,
         },
