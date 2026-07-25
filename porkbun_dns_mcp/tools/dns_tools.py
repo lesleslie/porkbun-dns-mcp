@@ -21,7 +21,7 @@ from porkbun_dns_mcp.config import get_logger_instance
 from porkbun_dns_mcp.models import DNSRecord, DNSRecordType
 
 if TYPE_CHECKING:
-    from fastmcp import FastMCP
+    from mcp_common.fastmcp import FastMCP
 
 logger = get_logger_instance("porkbun-dns-mcp.tools")
 
