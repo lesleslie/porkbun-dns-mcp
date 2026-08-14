@@ -8,7 +8,7 @@
 
 MCP server for managing Porkbun DNS records through a FastMCP interface.
 
-**Version:** 0.1.3
+**Version:** 0.2.0
 **Status:** Internal Bodai integration component
 
 ## Quick Links
@@ -35,15 +35,18 @@ This server is intentionally separate from `porkbun-domain-mcp`. DNS owns record
 
 ## Capabilities
 
-Implemented tool surface:
+Implemented tool surface (the first 5 bullets are MCP tools registered via
+`@app.tool()`; the last two are HTTP endpoints / internal helpers, not MCP tools —
+see the [Tool Reference](#tool-reference) and [Health Checks](#health-checks)
+sections for the exact surface):
 
 - **Record listing**: list all DNS records for a domain
 - **Record lookup**: retrieve a specific DNS record by ID
 - **Record creation**: create A, AAAA, CNAME, MX, TXT, NS, SRV, CAA, or ALIAS records
 - **Record editing**: update selected fields on an existing DNS record
 - **Record deletion**: remove a DNS record by ID
-- **Credential health metadata**: report whether API credentials are configured
-- **HTTP health routes**: `/health` and `/healthz` for MCP client and process supervision checks
+- **Credential health metadata**: `PorkbunDNSSettings.has_credentials()` reports whether API credentials are configured (internal helper, not an MCP tool)
+- **HTTP health routes**: `/health` and `/healthz` for MCP client and process supervision checks (Starlette routes, not MCP tools)
 
 ## Quick Start
 
@@ -154,6 +157,7 @@ Committed defaults live in `settings/porkbun-dns.yaml`. Runtime overrides should
 | HTTP port | `PORKBUN_DNS_HTTP_PORT` | `3042` |
 | Log level | `PORKBUN_DNS_LOG_LEVEL` | `INFO` |
 | JSON logs | `PORKBUN_DNS_LOG_JSON` | `true` |
+| Enable HTTP transport | `PORKBUN_DNS_ENABLE_HTTP_TRANSPORT` | `false` |
 
 ## Project Structure
 
