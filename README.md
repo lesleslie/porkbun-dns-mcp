@@ -118,6 +118,10 @@ curl http://127.0.0.1:3042/health
 curl http://127.0.0.1:3042/healthz
 ```
 
+## Installation via Bodai Marketplace
+
+This repo ships a Bodai Claude Code plugin manifest (`.claude-plugin/plugin.json`) plus a colocated `.mcp.json` and three slash commands in `commands/`. To install via the Bodai marketplace, first register the marketplace with Claude Code, then install the plugin by name. Once installed, the slash commands `/porkbun-dns-records`, `/porkbun-dns-list`, and `/porkbun-dns-create` become available alongside the `mcp__porkbun-dns__*` tools.
+
 ## Tool Reference
 
 | Tool | Purpose | Required Inputs |

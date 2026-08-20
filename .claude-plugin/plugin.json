@@ -1,0 +1,17 @@
+{
+  "author": {
+    "name": "Bodai"
+  },
+  "description": "Bodai plugin for the porkbun-dns-mcp DNS record management server.",
+  "keywords": [
+    "bodai",
+    "mcp",
+    "dns",
+    "porkbun",
+    "record-management"
+  ],
+  "mcpServers": "./.mcp.json",
+  "name": "porkbun-dns",
+  "schema_version": "1.0.0",
+  "version": "0.1.0"
+}

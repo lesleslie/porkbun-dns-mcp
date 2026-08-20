@@ -1,0 +1,6 @@
+{
+  "porkbun-dns": {
+    "type": "http",
+    "url": "http://localhost:3042/mcp"
+  }
+}
