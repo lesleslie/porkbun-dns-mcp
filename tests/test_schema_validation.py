@@ -210,7 +210,9 @@ class TestModelDiscovery:
     and serve as documentation for the expected model structure.
     """
 
-    @pytest.mark.skip(reason="Template awaiting model-specific tests; see module docstring")
+    @pytest.mark.skip(
+        reason="Template awaiting model-specific tests; see module docstring",
+    )
     def test_models_module_exists(self) -> None:
         """Check if the models module exists.
 
