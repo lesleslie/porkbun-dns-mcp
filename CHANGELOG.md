@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-08-20
+
+### Added
+
+- porkbun-dns-mcp: Adopt apply_tool_profile() from mcp-common 0.18.0
+- porkbun-dns: Bodai plugin conversion (manifest, mcp.json, slash commands)
+
+### Fixed
+
+- porkbun-dns-mcp: Shorten E501 line in test_schema_validation.py
+
+### Internal
+
+- gitignore: Untrack .pyscn/ (bodai 2026-08-20)
+- porkbun-dns-mcp: Add [tool.creosote] to skip self-tool scan
+- porkbun-dns-mcp: Bootstrap [tool.crackerjack] section + uv sync upgrade
+- porkbun-dns-mcp: Gitignore .lycheecache (file, not just dir)
+- porkbun-dns-mcp: Gitignore .lycheecache + .hypothesis
+- porkbun-dns-mcp: Refresh oneiric + mcp-common deps
+- porkbun-dns-mcp: Untrack .lycheecache + .hypothesis runtime artifacts
+
 ## [0.2.1] - 2026-08-17
 
 ### Documentation
