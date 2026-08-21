@@ -76,6 +76,13 @@ exclude_lines = [
 exclude_dirs = ["/tests"]
 skips = ["B101"]
 
+[tool.creosote]
+# Skip self-tool scan: crackerjack is declared in [dependency-groups].dev
+# but is the tool running creosote itself. Without this, creosote flags
+# crackerjack as an unused runtime import (false positive). See
+# https://github.com/fredrikaverpil/creosote for the full schema.
+exclude-deps = ["crackerjack"]
+
 [tool.crackerjack]
 # Baseline configuration (auto-bootstrapped 2026-08-20).
 # Hook stages run on `crackerjack run`; see crackerjack --help for the
