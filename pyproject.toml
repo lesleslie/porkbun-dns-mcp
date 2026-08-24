@@ -37,7 +37,7 @@ dev = [
 
 [tool.ruff]
 line-length = 88
-target-version = "py313"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "N", "B", "UP", "C4"]
@@ -45,7 +45,7 @@ extend-select = ["I"]
 
 [tool.pyright]
 include = ["porkbun_dns_mcp"]
-pythonVersion = "3.13"
+pythonVersion = "3.14"
 typeCheckingMode = "strict"
 
 [tool.pytest.ini_options]
