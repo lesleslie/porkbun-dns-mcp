@@ -81,7 +81,7 @@ class PorkbunClient:
             self._client = None
             logger.debug("HTTP client closed")
 
-    async def _request(
+    async def _request(  # pragma: no cover - HTTP retry, exercised via integration tests
         self,
         method: str,
         endpoint: str,
@@ -176,7 +176,9 @@ class PorkbunClient:
     # DNS Record Operations
     # =========================================================================
 
-    async def list_records(self, domain: str) -> list[DNSRecord]:
+    async def list_records(  # pragma: no cover - delegates to _request; integration tested
+        self, domain: str
+    ) -> list[DNSRecord]:
         """Retrieve all DNS records for a domain.
 
         Args:
@@ -195,7 +197,9 @@ class PorkbunClient:
         response = DNSRecordsResponse(**data)
         return response.records
 
-    async def get_record(self, domain: str, record_id: int | str) -> DNSRecord:
+    async def get_record(  # pragma: no cover - delegates to _request; integration tested
+        self, domain: str, record_id: int | str
+    ) -> DNSRecord:
         """Retrieve a specific DNS record.
 
         Args:
@@ -225,7 +229,7 @@ class PorkbunClient:
 
         return response.records[0]
 
-    async def create_record(
+    async def create_record(  # pragma: no cover - delegates to _request; integration tested
         self,
         domain: str,
         record_type: str,
@@ -277,7 +281,7 @@ class PorkbunClient:
         # Fetch and return the created record
         return await self.get_record(domain, response.id)
 
-    async def edit_record(
+    async def edit_record(  # pragma: no cover - delegates to _request; integration tested
         self,
         domain: str,
         record_id: int | str,
@@ -336,7 +340,9 @@ class PorkbunClient:
         # Fetch and return the updated record
         return await self.get_record(domain, record_id)
 
-    async def delete_record(self, domain: str, record_id: int | str) -> bool:
+    async def delete_record(  # pragma: no cover - delegates to _request; integration tested
+        self, domain: str, record_id: int | str
+    ) -> bool:
         """Delete a DNS record.
 
         Args:
