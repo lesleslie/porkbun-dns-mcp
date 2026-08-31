@@ -71,13 +71,13 @@ factory = MCPServerCLIFactory(
     health_probe_handler=health_probe_handler,
 )
 
-app = factory.create_app()
+app = factory.create_app()  # pragma: no cover
 
 
-def main() -> None:
+def main() -> None:  # pragma: no cover
     """Main entry point."""
     app()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
