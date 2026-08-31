@@ -81,7 +81,7 @@ class PorkbunClient:
             self._client = None
             logger.debug("HTTP client closed")
 
-    async def _request(  # pragma: no cover - HTTP retry, exercised via integration tests
+    async def _request(  # pragma: no cover - HTTP retry path
         self,
         method: str,
         endpoint: str,
@@ -176,7 +176,7 @@ class PorkbunClient:
     # DNS Record Operations
     # =========================================================================
 
-    async def list_records(  # pragma: no cover - delegates to _request; integration tested
+    async def list_records(  # pragma: no cover - delegates to _request
         self, domain: str
     ) -> list[DNSRecord]:
         """Retrieve all DNS records for a domain.
@@ -197,7 +197,7 @@ class PorkbunClient:
         response = DNSRecordsResponse(**data)
         return response.records
 
-    async def get_record(  # pragma: no cover - delegates to _request; integration tested
+    async def get_record(  # pragma: no cover - delegates to _request
         self, domain: str, record_id: int | str
     ) -> DNSRecord:
         """Retrieve a specific DNS record.
@@ -229,7 +229,7 @@ class PorkbunClient:
 
         return response.records[0]
 
-    async def create_record(  # pragma: no cover - delegates to _request; integration tested
+    async def create_record(  # pragma: no cover - delegates to _request
         self,
         domain: str,
         record_type: str,
@@ -281,7 +281,7 @@ class PorkbunClient:
         # Fetch and return the created record
         return await self.get_record(domain, response.id)
 
-    async def edit_record(  # pragma: no cover - delegates to _request; integration tested
+    async def edit_record(  # pragma: no cover - delegates to _request
         self,
         domain: str,
         record_id: int | str,
@@ -340,7 +340,7 @@ class PorkbunClient:
         # Fetch and return the updated record
         return await self.get_record(domain, record_id)
 
-    async def delete_record(  # pragma: no cover - delegates to _request; integration tested
+    async def delete_record(  # pragma: no cover - delegates to _request
         self, domain: str, record_id: int | str
     ) -> bool:
         """Delete a DNS record.

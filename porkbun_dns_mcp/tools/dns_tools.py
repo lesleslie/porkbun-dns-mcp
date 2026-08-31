@@ -151,7 +151,7 @@ def _record_to_dict(record: DNSRecord) -> dict[str, Any]:
 # =============================================================================
 
 
-def register_dns_tools(  # pragma: no cover - delegates to client methods; integration tested
+def register_dns_tools(  # pragma: no cover - delegates to client
     app: FastMCP, client: PorkbunClient
 ) -> None:
     """Register DNS management tools with the FastMCP app.
