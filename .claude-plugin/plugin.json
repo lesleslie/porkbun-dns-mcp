@@ -1,14 +1,12 @@
 {
   "author": {
-    "name": "Bodai"
+    "name": "Wedgwood Web Works"
   },
-  "description": "Bodai plugin for the porkbun-dns-mcp DNS record management server.",
+  "description": "Plugin for the porkbun-dns-mcp DNS record management server.",
   "keywords": [
-    "bodai",
     "mcp",
-    "dns",
-    "porkbun",
-    "record-management"
+    "porkbun-dns",
+    "dns"
   ],
   "mcpServers": "./.mcp.json",
   "name": "porkbun-dns",
