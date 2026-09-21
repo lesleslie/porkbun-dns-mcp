@@ -23,7 +23,7 @@ MCP server for managing Porkbun DNS records through a FastMCP interface.
 
 ## Quality & CI
 
-Crackerjack is the standard quality-control and CI/CD gate for Porkbun DNS MCP changes. Local verification should mirror the Crackerjack workflow used across the Bodai ecosystem.
+Crackerjack is the standard quality-control and CI/CD gate for Porkbun DNS MCP changes. Local verification should mirror the Crackerjack workflow.
 
 ______________________________________________________________________
 
@@ -201,3 +201,7 @@ uv run pytest tests/test_schema_validation.py -v
 - Treat DNS mutations as production-impacting operations.
 - Review generated `delete_dns_record` and `edit_dns_record` calls before exposing them to unattended agent workflows.
 - Scrub real domain details from fixtures, screenshots, and troubleshooting logs.
+
+Built on [Oneiric](https://github.com/lesleslie/oneiric) for runtime configuration
+and [mcp-common](https://github.com/lesleslie/mcp-common) for the FastMCP
+baseline. [Crackerjack](https://github.com/lesleslie/crackerjack) gates every commit.
